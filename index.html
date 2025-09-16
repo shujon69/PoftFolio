@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shujon Sheikh - Software Programmer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-effect text-white p-6 sticky top-0 z-20">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold tracking-tight">Shujon Sheikh</h1>
+            <ul class="flex space-x-8">
+                <li><a href="#home" class="nav-link hover:text-yellow-200 transition-colors duration-300 text-lg font-medium">Home</a></li>
+                <li><a href="#about" class="nav-link hover:text-yellow-200 transition-colors duration-300 text-lg font-medium">About</a></li>
+                <li><a href="#projects" class="nav-link hover:text-yellow-200 transition-colors duration-300 text-lg font-medium">Projects</a></li>
+                <li><a href="#skills" class="nav-link hover:text-yellow-200 transition-colors duration-300 text-lg font-medium">Skills</a></li>
+                <li><a href="#contact" class="nav-link hover:text-yellow-200 transition-colors duration-300 text-lg font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-animated text-white relative">
+        <div class="text-center fade-in glow-effect glass-effect p-10 rounded-2xl max-w-3xl">
+            <img src="images/profile.jpg" alt="Shujon Sheikh Profile Picture" class="profile-pic rounded-full w-56 h-56 mx-auto mb-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">Hi, I'm Shujon Sheikh</h1>
+            <p class="text-2xl md:text-3xl mb-8 font-light">Crafting Innovative Solutions as a Software Programmer</p>
+            <a href="#contact" class="btn-animated text-white px-8 py-4 rounded-full font-semibold text-lg">Let's Connect</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold section-header text-center">About Me</h2>
+            <div class="glass-effect p-10 rounded-2xl max-w-4xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed fade-in">
+                    I'm a passionate software programmer with over 5 years of experience building cutting-edge web and mobile applications. 
+                    My focus is on creating scalable, high-performance solutions with a seamless user experience. I specialize in clean, maintainable code 
+                    and have a knack for turning ideas into reality through innovative technology. Let's build something extraordinary together!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold section-header text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card p-8 fade-in">
+                    <img src="images/project1.jpg" alt="E-Commerce Platform" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-3 text-yellow-300">E-Commerce Platform</h3>
+                    <p class="text-gray-200 mb-4">A full-stack e-commerce website built with React, Node.js, and MongoDB. Features include user authentication, advanced product filtering, and secure payment integration.</p>
+                    <a href="#" class="text-yellow-300 hover:text-yellow-400 font-medium">View Project</a>
+                </div>
+                <div class="project-card p-8 fade-in" style="animation-delay: 0.2s;">
+                    <img src="images/project2.jpg" alt="Task Management App" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-3 text-yellow-300">Task Management App</h3>
+                    <p class="text-gray-200 mb-4">A sleek mobile app developed with Flutter and Firebase for efficient task organization and team collaboration. Supports real-time updates and push notifications.</p>
+                    <a href="#" class="text-yellow-300 hover:text-yellow-400 font-medium">View Project</a>
+                </div>
+                <div class="project-card p-8 fade-in" style="animation-delay: 0.4s;">
+                    <img src="images/project3.jpg" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-3 text-yellow-300">Portfolio Website</h3>
+                    <p class="text-gray-200 mb-4">This stunning website! Crafted with HTML, Tailwind CSS, and JavaScript to showcase my skills and projects in a vibrant, responsive design.</p>
+                    <a href="#" class="text-yellow-300 hover:text-yellow-400 font-medium">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold section-header text-center">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in">JavaScript</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.1s;">React</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.2s;">Node.js</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.3s;">Python</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.4s;">Flutter</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.5s;">MongoDB</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.6s;">AWS</div>
+                <div class="skill-item p-5 text-center text-lg font-medium fade-in" style="animation-delay: 0.7s;">Git</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold section-header text-center">Contact Me</h2>
+            <div class="glass-effect p-10 rounded-2xl max-w-4xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-200 mb-8 fade-in text-center">Ready to create something extraordinary? Reach out and let's make it happen!</p>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 justify-center">
+                    <a href="mailto:shujon.sheikh@example.com" class="btn-animated text-white px-8 py-4 rounded-lg font-semibold text-lg fade-in">Email Me</a>
+                    <a href="https://linkedin.com/in/shujonsheikh" class="btn-animated text-white px-8 py-4 rounded-lg font-semibold text-lg fade-in" style="animation-delay: 0.2s;">LinkedIn</a>
+                    <a href="https://github.com/shujonsheikh" class="btn-animated text-white px-8 py-4 rounded-lg font-semibold text-lg fade-in" style="animation-delay: 0.4s;">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-effect text-white p-6 text-center">
+        <p class="text-lg">&copy; 2025 Shujon Sheikh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Trigger animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
