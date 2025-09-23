@@ -283,13 +283,33 @@ body {
     0% { opacity: 1; transform: scale(1); }
     100% { opacity: 0; transform: scale(0.5); }
 }
+.fb-widget {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 320px;
+}
+.fb-widget-left {
+    left: 20px;
+}
+.fb-widget-right {
+    right: 20px;
+}
 /* Mobile Responsiveness */
 @media (max-width: 640px) {
     body {
         background: linear-gradient(135deg, #1e3a8a, #6b21a8);
     }
-    .particle, .trail {
-        display: none; /* Disable particle and trail effects on mobile */
+    .particle, .trail, .fb-widget {
+        display: none; /* Disable particle, trail, and Facebook widgets on mobile */
     }
     .section-header {
         font-size: 2rem;
