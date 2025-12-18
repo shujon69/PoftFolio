@@ -9,6 +9,43 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, .rotate-in').forEach(element => {
     observer.observe(element);
 });
+
+// Facebook widget hide on scroll
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Select Facebook widgets
+    const fbWidgets = document.querySelectorAll('.fb-widget');
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        fbWidgets.forEach(widget => {
+            widget.style.transition = 'opacity 0.5s, transform 0.5s';
+            widget.style.opacity = '0';
+            widget.style.transform = 'translateY(-50%) translateX(-20px)';
+            
+            // Hide the widget completely after transition
+            setTimeout(() => {
+                widget.style.display = 'none';
+            }, 500);
+        });
+    } else if (scrollTop < lastScrollTop) {
+        // Scrolling up
+        fbWidgets.forEach(widget => {
+            widget.style.display = 'block';
+            
+            // Use setTimeout to ensure the display change is applied before the opacity change
+            setTimeout(() => {
+                widget.style.opacity = '1';
+                widget.style.transform = 'translateY(-50%) translateX(0)';
+            }, 10);
+        });
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+}, false);
+
 // Dynamic particle animation (disabled on mobile)
 function createParticle() {
     if (window.innerWidth < 640) return; // Skip on mobile
@@ -24,6 +61,7 @@ function createParticle() {
     setTimeout(() => particle.remove(), 5000);
 }
 setInterval(createParticle, 300);
+
 // Mouse trail effect (disabled on mobile)
 document.addEventListener('mousemove', (e) => {
     if (window.innerWidth < 640) return; // Skip on mobile
