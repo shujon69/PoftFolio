@@ -10,16 +10,15 @@ document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, 
     observer.observe(element);
 });
 
-// Facebook widget hide on scroll
-let lastScrollTop = 0;
+// Facebook widget show/hide based on scroll position
 window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     // Select Facebook widgets
     const fbWidgets = document.querySelectorAll('.fb-widget');
     
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
+    if (scrollTop > 100) {
+        // Not at the top of the page - hide widgets
         fbWidgets.forEach(widget => {
             widget.style.transition = 'opacity 0.5s, transform 0.5s';
             widget.style.opacity = '0';
@@ -30,8 +29,8 @@ window.addEventListener('scroll', function() {
                 widget.style.display = 'none';
             }, 500);
         });
-    } else if (scrollTop < lastScrollTop) {
-        // Scrolling up
+    } else {
+        // At the top of the page - show widgets
         fbWidgets.forEach(widget => {
             widget.style.display = 'block';
             
@@ -42,8 +41,6 @@ window.addEventListener('scroll', function() {
             }, 10);
         });
     }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 }, false);
 
 // Dynamic particle animation (disabled on mobile)
