@@ -1,133 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shujon Sheikh - Software Programmer Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F4F0E8">
+<title>MD. Sujan Miah — Software Programmer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0&appId=APP_ID"></script>
 
-    <!-- Facebook Widgets -->
-    <div class="fb-widget fb-widget-left hidden sm:block">
-        <div class="fb-page" data-href="https://facebook.com/shujon69" data-tabs="timeline" data-width="300" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
-    </div>
-    <div class="fb-widget fb-widget-right hidden sm:block">
-        <div class="fb-page" data-href="https://facebook.com/shujon69" data-tabs="timeline" data-width="300" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+<canvas id="particleCanvas"></canvas>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav" id="navbar">
+  <a href="#home" class="nav-logo">Sujan<sup>DEV</sup></a>
+  <div class="nav-links">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+  <div class="mm-foot">sh.sujon4x@gmail.com · Dhaka, BD</div>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero" id="home">
+  <div class="orb-field">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="orb orb-d"></div>
+    <div class="liquid-blob blob-1"></div>
+    <div class="liquid-blob blob-2"></div>
+    <div class="liquid-blob blob-3"></div>
+  </div>
+  <div class="container">
+    <div class="hero-top glass">
+      <div class="gl"></div>
+      <div class="hero-status">
+        <span class="pulse"></span>
+        Available for opportunities
+      </div>
+      <div class="hero-meta">
+        <span>Based in <b>Dhaka, Bangladesh</b></span>
+        <span>Exp <b>4+ Years</b></span>
+        <span>Focus <b>Enterprise Systems</b></span>
+      </div>
     </div>
 
-    <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-animated text-white relative overflow-hidden">
-        <div class="text-center zoom-in glow-effect glass-effect p-6 sm:p-10 rounded-2xl max-w-3xl mx-4">
-            <img src="images/profile.jpg" alt="MD. Sujan Miah Profile Picture" class="profile-pic rounded-full w-32 h-32 sm:w-56 sm:h-56 mx-auto mb-6">
-            <h2 class="text-2xl sm:text-2xl md:text-5xl font-bold mb-4 tracking-tight slide-in-left">Hi, I'm MD. Sujan Miah</h2>
-            <p class="text-lg sm:text-2xl md:text-3xl mb-8 font-light slide-in-right">Sr. Programmer (Oracle Apex) at Swadesh IT</p>
-            <a href="#contact" class="btn-animated px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg zoom-in">Let's Connect</a>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-label">Software Programmer</div>
+        <h1 class="hero-name">
+          <span class="word"><i style="animation-delay:.15s">MD.</i></span>
+          <span class="word"><i style="animation-delay:.28s">Sujan</i></span>
+          <span class="word"><i style="animation-delay:.41s">Miah</i></span>
+          <em><span class="word"><i style="animation-delay:.58s">builds</i></span>
+          <span class="word"><i style="animation-delay:.7s">systems</i></span></em>
+        </h1>
+      </div>
+      <div class="hero-right glass">
+        <div class="gl"></div>
+        <div class="hero-role">
+          <span id="typedText"></span><span class="cursor"></span>
         </div>
-    </section>
-    <!-- About Section -->
-    <section id="about" class="py-12 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-header text-center slide-in-left">About Me</h2>
-            <div class="glass-effect p-6 sm:p-10 rounded-2xl max-w-4xl mx-auto">
-                <p class="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed rotate-in">
-                    I am a dedicated software programmer with expertise in <strong>Oracle Apex, PL/SQL, and Supply Chain Management (SCM) systems</strong>.
-                    Currently working as a <strong>Sr. Programmer at Swadesh IT</strong>, I have hands-on experience in developing and maintaining SCM, HR & Payroll, Trading, and POS software.
-                    My goal is to use technical and interpersonal skills to create scalable, efficient, and user-friendly systems.
-                </p>
-            </div>
+        <p class="hero-desc">
+          Crafting scalable enterprise solutions with Oracle Apex, PL/SQL &amp; modern web
+          technologies — powering supply chains, HR, and trading operations for real businesses.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-ink">Let's Work Together <span class="arr">→</span></a>
+          <a href="#projects" class="btn btn-ghost">View My Work <span class="arr">→</span></a>
         </div>
-    </section>
-    <!-- Projects/Experience Section -->
-    <section id="projects" class="py-12 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-header text-center slide-in-left">Experience</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="project-card p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-yellow-300 zoom-in">Sr. Programmer (Oracle Apex)</h3>
-                    <p class="text-gray-200 mb-4 rotate-in text-sm sm:text-base">
-                        Swadesh IT (Dec 2021 – Present)<br>
-                        <ul class="list-disc list-inside">
-                            <li>Developed SCM software for Enam Trims Ltd, JFZ Label & Printing, Baly Integrated Solutions Ltd.</li>
-                            <li>Built HR & Payroll systems for Erebus & Horizon Plastic Ind. and Eden Solutions Ltd.</li>
-                            <li>Worked on Trading solutions for Orient Link (HK) BD.</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="scroll-cue">
+        <span class="line"></span>
+        Scroll to explore
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/shujon69" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/shujon69" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/shujon69" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/+8801985575359" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <div class="marquee-item"><span class="dot"></span>Oracle Apex<span class="ghost">01</span></div>
+      <div class="marquee-item"><span class="dot"></span>PL/SQL<span class="ghost">02</span></div>
+      <div class="marquee-item"><span class="dot"></span>Supply Chain<span class="ghost">03</span></div>
+      <div class="marquee-item"><span class="dot"></span>HR &amp; Payroll<span class="ghost">04</span></div>
+      <div class="marquee-item"><span class="dot"></span>Trading Systems<span class="ghost">05</span></div>
+      <div class="marquee-item"><span class="dot"></span>POS Software<span class="ghost">06</span></div>
+      <div class="marquee-item"><span class="dot"></span>JavaScript<span class="ghost">07</span></div>
+      <div class="marquee-item"><span class="dot"></span>HTML / CSS<span class="ghost">08</span></div>
+    </div>
+    <div class="marquee-group">
+      <div class="marquee-item"><span class="dot"></span>Oracle Apex<span class="ghost">01</span></div>
+      <div class="marquee-item"><span class="dot"></span>PL/SQL<span class="ghost">02</span></div>
+      <div class="marquee-item"><span class="dot"></span>Supply Chain<span class="ghost">03</span></div>
+      <div class="marquee-item"><span class="dot"></span>HR &amp; Payroll<span class="ghost">04</span></div>
+      <div class="marquee-item"><span class="dot"></span>Trading Systems<span class="ghost">05</span></div>
+      <div class="marquee-item"><span class="dot"></span>POS Software<span class="ghost">06</span></div>
+      <div class="marquee-item"><span class="dot"></span>JavaScript<span class="ghost">07</span></div>
+      <div class="marquee-item"><span class="dot"></span>HTML / CSS<span class="ghost">08</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STATS ═══════════ -->
+<section style="padding-top:clamp(60px,9vw,100px);padding-bottom:0">
+  <div class="container">
+    <div class="stats-wrap rv">
+      <div class="stat glass">
+        <div class="gl"></div>
+        <div class="idx">01</div>
+        <div class="stat-num"><span data-target="4">0</span><sup>+</sup></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat glass">
+        <div class="gl"></div>
+        <div class="idx">02</div>
+        <div class="stat-num"><span data-target="15">0</span><sup>+</sup></div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat glass">
+        <div class="gl"></div>
+        <div class="idx">03</div>
+        <div class="stat-num"><span data-target="10">0</span><sup>+</sup></div>
+        <div class="stat-label">Enterprise Clients</div>
+      </div>
+      <div class="stat glass">
+        <div class="gl"></div>
+        <div class="idx">04</div>
+        <div class="stat-num"><span data-target="8">0</span><sup>+</sup></div>
+        <div class="stat-label">Technologies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head rv">
+      <div class="eyebrow"><span class="bar"></span><span class="num">01</span> — About Me</div>
+      <h2 class="section-title">Building the future <em>with code</em></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-figure rv-l">
+        <div class="deco"></div>
+        <div class="frame">
+          <img src="images/profile.jpg" alt="MD. Sujan Miah">
         </div>
-    </section>
-    <!-- Training Section -->
-    <section id="skills" class="py-12 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-header text-center slide-in-left">Training</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="project-card p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-yellow-300 zoom-in">Database Design & Development</h3>
-                    <p class="text-gray-200 mb-4 rotate-in text-sm sm:text-base">IDB-BISEW, 1000 Hours (2021)</p>
-                </div>
-                <div class="project-card p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-yellow-300 zoom-in">Graphics Design</h3>
-                    <p class="text-gray-200 mb-4 rotate-in text-sm sm:text-base">SR Institute of Design, 3 Months (2019)</p>
-                </div>
-                <div class="project-card p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-yellow-300 zoom-in">Mobile Games & Applications</h3>
-                    <p class="text-gray-200 mb-4 rotate-in text-sm sm:text-base">Arena Phone BD Ltd, 8 Months (2019)</p>
-                </div>
-                <div class="project-card p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-yellow-300 zoom-in">Web Design</h3>
-                    <p class="text-gray-200 mb-4 rotate-in text-sm sm:text-base">IIT, University of Dhaka, 6 Months (2018)</p>
-                </div>
-                <div class="project-card p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-yellow-300 zoom-in">Web Design</h3>
-                    <p class="text-gray-200 mb-4 rotate-in text-sm sm:text-base">BITM, 6 Months (2017)</p>
-                </div>
-            </div>
+        <div class="caption glass">
+          <div class="gl"></div>
+          <b>MD. Sujan Miah</b><br>
+          Sr. Programmer · Swadesh IT
         </div>
-    </section>
-    <!-- Skills Section -->
-    <section id="skills" class="py-12 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-header text-center slide-in-left">Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">Oracle Apex</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">PL/SQL</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">Oracle Database (11g, 12c, 19c)</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">HTML, CSS, JavaScript</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">Bootstrap, JQuery</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">Oracle Forms & Reports</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">SCM, HR & Payroll, Trading Systems</div>
-                <div class="skill-item p-4 sm:p-5 text-center font-medium rotate-in">Graphics & Web Design</div>
-            </div>
+      </div>
+
+      <div class="about-body">
+        <p class="lead rv">
+          I turn complex business requirements into <em>clean, efficient,</em> and
+          user-friendly enterprise systems.
+        </p>
+        <p class="rv" style="transition-delay:.1s">
+          I'm a <strong>dedicated software programmer</strong> with deep expertise in
+          <strong>Oracle Apex, PL/SQL, and Supply Chain Management (SCM) systems</strong>.
+          Currently serving as a <strong>Sr. Programmer at Swadesh IT</strong>, I design and
+          build enterprise-grade software that streamlines operations for real businesses.
+        </p>
+        <p class="rv" style="transition-delay:.18s">
+          From SCM and HR &amp; Payroll to Trading and POS solutions — every system I ship is
+          built to scale, secure by default, and genuinely pleasant to use.
+        </p>
+
+        <ul class="about-list">
+          <li class="rv glass" style="transition-delay:.22s"><div class="gl"></div><div class="ic">⚡</div><div class="tx">Fast &amp; Efficient Code</div></li>
+          <li class="rv glass" style="transition-delay:.28s"><div class="gl"></div><div class="ic">🏗️</div><div class="tx">Scalable Architecture</div></li>
+          <li class="rv glass" style="transition-delay:.34s"><div class="gl"></div><div class="ic">🔒</div><div class="tx">Enterprise Security</div></li>
+          <li class="rv glass" style="transition-delay:.4s"><div class="gl"></div><div class="ic">📱</div><div class="tx">Responsive Design</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-head center rv">
+      <div class="eyebrow"><span class="bar"></span><span class="num">02</span> — My Expertise</div>
+      <h2 class="section-title">Skills &amp; <em>Technologies</em></h2>
+      <p class="section-sub">Technologies and tools I use to bring ideas to life — measured by real project delivery.</p>
+    </div>
+
+    <div class="skills-shell glass">
+      <div class="gl"></div>
+      <div class="skill-row rv">
+        <div class="n">01</div>
+        <div><h3>Oracle Apex</h3><div class="tag">Core Stack</div></div>
+        <p class="desc">Enterprise web applications with rapid development framework.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="95%"></i></div>
+          <div class="skill-pct">95%</div>
         </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact" class="py-12 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold section-header text-center slide-in-left">Contact Me</h2>
-            <div class="glass-effect p-6 sm:p-10 rounded-2xl max-w-4xl mx-auto">
-                <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-8 rotate-in text-center">
-                    Reach out to collaborate or discuss opportunities!
-                </p>
-                <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 justify-center">
-                    <a href="mailto:sh.sujon4x@gmail.com" class="btn-animated">Email Me</a>
-                    <a href="tel:+8801985575359" class="btn-animated">Call Me</a>
-                    <a href="https://linkedin.com/in/shujon69" class="btn-animated">LinkedIn</a>
-                    <a href="https://github.com/shujon69" class="btn-animated">GitHub</a>
-                    <a href="https://facebook.com/shujon69" class="btn-animated">Facebook</a>
-                </div>
-            </div>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.06s">
+        <div class="n">02</div>
+        <div><h3>PL/SQL</h3><div class="tag">Database</div></div>
+        <p class="desc">Advanced database programming, optimization &amp; complex queries.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="92%"></i></div>
+          <div class="skill-pct">92%</div>
         </div>
-    </section>
-    <!-- Footer -->
-    <footer class="glass-effect text-white p-4 sm:p-6 text-center rotate-in">
-        <p class="text-base sm:text-lg">&copy; 2026 MD. Sujan Miah. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.12s">
+        <div class="n">03</div>
+        <div><h3>SCM Systems</h3><div class="tag">Domain</div></div>
+        <p class="desc">Supply chain management — inventory, procurement, logistics.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="90%"></i></div>
+          <div class="skill-pct">90%</div>
+        </div>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.18s">
+        <div class="n">04</div>
+        <div><h3>HR &amp; Payroll</h3><div class="tag">Domain</div></div>
+        <p class="desc">Human resource management and payroll processing systems.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="88%"></i></div>
+          <div class="skill-pct">88%</div>
+        </div>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.24s">
+        <div class="n">05</div>
+        <div><h3>Trading Solutions</h3><div class="tag">Domain</div></div>
+        <p class="desc">Custom trading platforms and business process automation.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="85%"></i></div>
+          <div class="skill-pct">85%</div>
+        </div>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.3s">
+        <div class="n">06</div>
+        <div><h3>POS Software</h3><div class="tag">Domain</div></div>
+        <p class="desc">Point-of-sale systems for retail and distribution businesses.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="87%"></i></div>
+          <div class="skill-pct">87%</div>
+        </div>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.36s">
+        <div class="n">07</div>
+        <div><h3>JavaScript</h3><div class="tag">Frontend</div></div>
+        <p class="desc">Interactive front-end logic, DOM manipulation &amp; modern ES6+.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="82%"></i></div>
+          <div class="skill-pct">82%</div>
+        </div>
+      </div>
+      <div class="skill-row rv" style="transition-delay:.42s">
+        <div class="n">08</div>
+        <div><h3>HTML / CSS</h3><div class="tag">Frontend</div></div>
+        <p class="desc">Clean semantic markup, responsive layouts &amp; modern CSS.</p>
+        <div class="skill-meter-wrap">
+          <div class="skill-meter"><i data-width="90%"></i></div>
+          <div class="skill-pct">90%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-head rv">
+      <div class="eyebrow"><span class="bar"></span><span class="num">03</span> — Career Journey</div>
+      <h2 class="section-title">Professional <em>Experience</em></h2>
+      <p class="section-sub">My journey through the world of enterprise software development.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item rv-l">
+        <div class="tl-when">Dec 2021<br><span class="now">— Present</span></div>
+        <div class="tl-card glass">
+          <div class="gl"></div>
+          <h3>Sr. Programmer (Oracle Apex)</h3>
+          <div class="company">Swadesh IT</div>
+          <p>Leading enterprise software development for multiple industries.</p>
+          <ul>
+            <li>Developed SCM software for Enam Trims Ltd, JFZ Label &amp; Printing, Baly Integrated Solutions Ltd.</li>
+            <li>Built HR &amp; Payroll systems for Erebus &amp; Horizon Plastic Ind. and Eden Solutions Ltd.</li>
+            <li>Worked on Trading solutions for Orient Link (HK) BD.</li>
+            <li>Maintained and enhanced POS software for retail clients.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item rv-l" style="transition-delay:.12s">
+        <div class="tl-when">2020<br>— 2021</div>
+        <div class="tl-card glass">
+          <div class="gl"></div>
+          <h3>Junior Programmer</h3>
+          <div class="company">Software Development</div>
+          <p>Started my professional journey in enterprise application development.</p>
+          <ul>
+            <li>Worked on database design and PL/SQL programming.</li>
+            <li>Assisted in Oracle Apex application development.</li>
+            <li>Learned SCM business processes and system integration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head center rv">
+      <div class="eyebrow"><span class="bar"></span><span class="num">04</span> — My Work</div>
+      <h2 class="section-title">Featured <em>Projects</em></h2>
+      <p class="section-sub">Enterprise solutions that made a real impact for businesses.</p>
+    </div>
+
+    <div class="proj-list">
+      <article class="proj rv-s glass" style="--p1:#7C5CBF;--p2:#4A9B8E">
+        <div class="gl"></div>
+        <div class="proj-visual">
+          <div class="art"></div>
+          <div class="grid"></div>
+          <div class="glow"></div>
+          <div class="chip">Case Study 01</div>
+          <div class="big-ic">🔗</div>
+        </div>
+        <div class="proj-body">
+          <div class="kicker">Supply Chain · Enterprise</div>
+          <h3>Supply Chain Management System</h3>
+          <p>End-to-end SCM solution covering inventory, procurement, and logistics for manufacturing companies.</p>
+          <div class="proj-tags"><span>Oracle Apex</span><span>PL/SQL</span><span>SCM</span></div>
+          <a href="#contact" class="proj-link">Discuss This Build <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="proj rv-s glass" style="--p1:#C97B5A;--p2:#D9B26A;transition-delay:.1s">
+        <div class="gl"></div>
+        <div class="proj-visual">
+          <div class="art"></div>
+          <div class="grid"></div>
+          <div class="glow"></div>
+          <div class="chip">Case Study 02</div>
+          <div class="big-ic">👥</div>
+        </div>
+        <div class="proj-body">
+          <div class="kicker">Human Resources · Payroll</div>
+          <h3>HR &amp; Payroll Management</h3>
+          <p>Comprehensive HR and payroll system with attendance tracking, salary processing, and reporting.</p>
+          <div class="proj-tags"><span>Oracle Apex</span><span>PL/SQL</span><span>HR</span></div>
+          <a href="#contact" class="proj-link">Discuss This Build <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="proj rv-s glass" style="--p1:#4A8FA6;--p2:#6FB8A8;transition-delay:.2s">
+        <div class="gl"></div>
+        <div class="proj-visual">
+          <div class="art"></div>
+          <div class="grid"></div>
+          <div class="glow"></div>
+          <div class="chip">Case Study 03</div>
+          <div class="big-ic">🛒</div>
+        </div>
+        <div class="proj-body">
+          <div class="kicker">Retail · Point of Sale</div>
+          <h3>Point of Sale (POS) System</h3>
+          <p>Retail POS software with inventory management, sales tracking, and real-time reporting.</p>
+          <div class="proj-tags"><span>Oracle Apex</span><span>POS</span><span>Retail</span></div>
+          <a href="#contact" class="proj-link">Discuss This Build <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="proj rv-s glass" style="--p1:#B4763A;--p2:#B85C4A;transition-delay:.3s">
+        <div class="gl"></div>
+        <div class="proj-visual">
+          <div class="art"></div>
+          <div class="grid"></div>
+          <div class="glow"></div>
+          <div class="chip">Case Study 04</div>
+          <div class="big-ic">💼</div>
+        </div>
+        <div class="proj-body">
+          <div class="kicker">Trading · Finance</div>
+          <h3>Trading Management Platform</h3>
+          <p>Custom trading solution for import/export operations with order management and financial tracking.</p>
+          <div class="proj-tags"><span>Oracle Apex</span><span>Trading</span><span>Finance</span></div>
+          <a href="#contact" class="proj-link">Discuss This Build <span>→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ EDUCATION ═══════════ -->
+<section id="education">
+  <div class="container">
+    <div class="section-head rv">
+      <div class="eyebrow"><span class="bar"></span><span class="num">05</span> — Education</div>
+      <h2 class="section-title">Academic <em>Background</em></h2>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card rv glass">
+        <div class="gl"></div>
+        <div class="blob"></div>
+        <div class="yr">Bachelor's Degree</div>
+        <h3>Computer Science &amp; Engineering</h3>
+        <div class="inst">University</div>
+        <p>Studied software engineering, database systems, algorithms, and web technologies.</p>
+      </div>
+      <div class="edu-card rv glass" style="transition-delay:.12s">
+        <div class="gl"></div>
+        <div class="blob"></div>
+        <div class="yr">Professional Training</div>
+        <h3>Oracle Apex &amp; PL/SQL</h3>
+        <div class="inst">Specialized Training</div>
+        <p>Advanced Oracle Apex development, PL/SQL programming, and enterprise application architecture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-shell rv-s glass">
+      <div class="gl"></div>
+      <div class="contact-left">
+        <div class="eyebrow"><span class="bar"></span><span class="num">06</span> — Get In Touch</div>
+        <h2>Let's build something <em>great together</em></h2>
+        <p>Open to collaboration, freelance projects, and full-time opportunities. Drop me a line and let's talk.</p>
+
+        <div class="ci-list">
+          <a class="ci" href="mailto:sh.sujon4x@gmail.com">
+            <div class="ic">📧</div>
+            <div><div class="lb">Email</div><div class="vl">sh.sujon4x@gmail.com</div></div>
+          </a>
+          <a class="ci" href="tel:+8801985575359">
+            <div class="ic">📱</div>
+            <div><div class="lb">Phone</div><div class="vl">+880 1985-575359</div></div>
+          </a>
+          <div class="ci">
+            <div class="ic">📍</div>
+            <div><div class="lb">Location</div><div class="vl">Middle Badda, Dhaka, Bangladesh</div></div>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a class="soc" style="--c:#4A6B7C" href="https://www.linkedin.com/in/shujon69" target="_blank" rel="noopener"><span class="d"></span>LinkedIn</a>
+          <a class="soc" style="--c:#1A1714" href="https://github.com/shujon69" target="_blank" rel="noopener"><span class="d"></span>GitHub</a>
+          <a class="soc" style="--c:#4A6B7C" href="https://www.facebook.com/shujon69/" target="_blank" rel="noopener"><span class="d"></span>Facebook</a>
+          <a class="soc" style="--c:#5F6B4E" href="https://wa.me/+8801985575359" target="_blank" rel="noopener"><span class="d"></span>WhatsApp</a>
+          <a class="soc" style="--c:#4A8FA6" href="https://t.me/shujon69" target="_blank" rel="noopener"><span class="d"></span>Telegram</a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="form-title">Send a Message</div>
+        <form class="form-grid" id="contactForm" novalidate>
+          <div class="field">
+            <label for="fName">Your Name</label>
+            <input id="fName" type="text" placeholder="Jane Doe" required>
+          </div>
+          <div class="field">
+            <label for="fEmail">Your Email</label>
+            <input id="fEmail" type="email" placeholder="jane@company.com" required>
+          </div>
+          <div class="field">
+            <label for="fSub">Subject</label>
+            <input id="fSub" type="text" placeholder="Project enquiry">
+          </div>
+          <div class="field">
+            <label for="fMsg">Your Message</label>
+            <textarea id="fMsg" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-terra" style="justify-content:center;width:100%">
+            Send Message <span class="arr">→</span>
+          </button>
+          <div class="form-note" id="formNote">Typical reply within 24 hours</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">Sujan<em>.dev</em></div>
+        <p class="foot-tag">Enterprise software programmer crafting scalable systems with Oracle Apex, PL/SQL &amp; modern web technologies.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/shujon69" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/shujon69" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.facebook.com/shujon69/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://wa.me/+8801985575359" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://t.me/shujon69" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="mailto:sh.sujon4x@gmail.com">Email Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 MD. Sujan Miah — All rights reserved</div>
+      <div>Crafted with passion &amp; code</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
-
